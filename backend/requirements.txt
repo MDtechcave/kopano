@@ -6,3 +6,5 @@ tzdata
 # for tests
 pytest
 httpx
+
+psycopg[binary]>=3.2,<4
