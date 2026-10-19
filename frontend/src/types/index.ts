@@ -1,0 +1,9 @@
+export type Role = 'client' | 'sales';
+export type User = { id: number; email: string; full_name: string; phone?: string | null; company: string; role: Role; is_admin: boolean; must_change_password: boolean };
+export type Product = { code: string; description: string; category: string; brand?: string | null; quantity?: number | null; stock_band: string; stock_label: string; data_notes?: string[] };
+export type QuoteLine = { product_code: string; description: string; quantity: number; unit_price?: number | null; discount_percent?: number | null; line_total?: number | null; stock_on_hand?: number | null; shortfall?: number };
+export type Event = { created_at: string; actor_name: string; actor_role: string; action: string; detail?: string | null };
+export type Quote = { id: number; reference: string; status: string; created_at: string; company_name: string; contact_name: string; email: string; phone: string; delivery_city: string; vat_number?: string | null; notes?: string | null; total_units: number; lines: QuoteLine[]; subtotal?: number | null; vat_rate?: number | null; vat_amount?: number | null; total?: number | null; validity_date?: string | null; is_expired?: boolean; quotation_notes?: string | null; revision?: number; sent_at?: string | null; history?: Event[]; sales_notes?: string | null; client_email?: string; has_stock_shortfall?: boolean };
+export type TeamMember = { id: number; email: string; full_name: string; is_admin: boolean; is_active: boolean; must_change_password: boolean; added_by_name?: string | null; created_at: string; last_login_at?: string | null; temporary_password?: string };
+export type Page = 'catalogue' | 'basket' | 'login' | 'register' | 'client' | 'sales' | 'quote' | 'team' | 'password';
+export type BasketLine = { product: Product; quantity: number };

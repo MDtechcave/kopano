@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlalchemy
+pyjwt
+tzdata
+# for tests
+pytest
+httpx
